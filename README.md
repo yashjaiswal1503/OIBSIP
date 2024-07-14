@@ -1,0 +1,1 @@
+This are my tasks which i was assiged during my internship. I have implemented almost all the features, tags and functions of HTML, CSS & JS which I have learned till date. You can view and go through it. Its from basics to advanced. 
