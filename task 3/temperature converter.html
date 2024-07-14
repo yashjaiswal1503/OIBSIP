@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Temperature Converter</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        background-color:lavender;
+    }
+    .container {
+        margin-top: 50px;
+        font-size: 30px;
+    }
+    label {
+        font-weight: bold;
+    }
+    input{
+        padding: 5px;
+    }
+    select{
+        padding: 5px;
+    }
+    button{
+        font-size: 20px;
+        color: white;
+        background-color: black;
+        
+    }
+</style>
+</head>
+<body>
+    <div class="container">
+        <h2>Temperature Converter</h2>
+        <label for="temperature">Enter temperature:</label>
+        <input type="number" id="temperature">
+        <br><br>
+        <label for="unit">Convert to:</label>
+        <select id="unit">
+            <option value="celsius">Celsius</option>
+            <option value="fahrenheit">Fahrenheit</option>
+        </select>
+        <br><br>
+        <button onclick="convertTemperature()">Convert</button>
+        <br><br>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        function convertTemperature() {
+            // Get input values
+            var temperature = parseFloat(document.getElementById('temperature').value);
+            var unit = document.getElementById('unit').value;
+
+            // Convert temperature based on selected unit
+            var convertedTemperature;
+            if (unit === 'celsius') {
+                convertedTemperature = (temperature - 32) * (5/9);
+                document.getElementById('result').textContent = `${temperature} Fahrenheit is ${convertedTemperature.toFixed(2)} Celsius.`;
+            } else if (unit === 'fahrenheit') {
+                convertedTemperature = (temperature * (9/5)) + 32;
+                document.getElementById('result').textContent = `${temperature} Celsius is ${convertedTemperature.toFixed(2)} Fahrenheit.`;
+            }
+        }
+    </script>
+</body>
+</html>
